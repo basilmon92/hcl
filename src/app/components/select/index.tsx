@@ -1,11 +1,11 @@
 'use client'
 import { useState } from 'react'
 export default function selectComponent() {
-    const [selectedType, setSelectedType] = useState('credits');
+    const [select, setSelect] = useState('credits');
     return (
       <label>
         Payment Type
-        <select value={selectedType} onChange={e => setSelectedType(e.target.value)} name="selectedType">
+        <select value={select} onChange={e => setSelect(e.target.value)} name="select">
           <option value="credits">Credits</option>
           <option value="debits">Debits</option>
         </select>
