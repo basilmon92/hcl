@@ -66,6 +66,6 @@ export const data = {
 
 export function Chart(props: ChartProps) {
     return (
-        <Bar options={options} data={data} />
+        <Bar options={options} data={data} aria-label="Hello ARIA World" role="img" />
     );
 }

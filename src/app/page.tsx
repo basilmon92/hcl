@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar/Navbar";
+import {Chart} from "@/components/Chart";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -117,7 +118,7 @@ export default function Home() {
 
         {/* Graph compoonet */}
           <div className="dashboard_graph_holder w-full ">
-           <h1 className="font-semibold text-lg"> Dash Board Graph Place here </h1>
+           <Chart />
           </div>
         
         {/* table compoonet */}
