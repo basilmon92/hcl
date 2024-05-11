@@ -1,11 +1,37 @@
+
+"use client"
+
+import AddTransition from "@/components/AddTransition";
+import { Chart } from "@/components/Chart";
 import Navbar from "@/components/Navbar/Navbar";
-import {Chart} from "@/components/Chart";
 import Image from "next/image";
 import Link from "next/link";
 import  {Table}  from "@/components/Table";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import React, { useState } from "react";
 
 export default function Home() {
 
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid white',
+    boxShadow: 24,
+    borderRadius:'10px',
+    p: 4,
+  };
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
@@ -35,7 +61,7 @@ export default function Home() {
           <div className="flex space-x-4">
             <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Shopping</a>
             <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Loan</a>
-            <a href="#" className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Add Transition</a>
+            <a href="#" className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page" onClick={handleOpen}>Add Transition</a>
           </div>
         </div>
       </div>
@@ -58,7 +84,7 @@ export default function Home() {
           </div>
 
           
-          <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" >
+          <div className="hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" >
             <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem"  id="user-menu-item-0">Your Profile</a>
             <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem"  id="user-menu-item-1">Settings</a>
             <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem"  id="user-menu-item-2">Sign out</a>
@@ -123,7 +149,28 @@ export default function Home() {
           </div>
         
         {/* table compoonet */}
+  
+        <div className="dashboard_graph_holder w-full ">
+           <h1 className="font-semibold text-lg">Monthly Spend View</h1>
           <Table />
+        </div>
+        {/* Add transition popup  */}
+              
+
+
+              <div>
+      {/* <Button >Open modal</Button> */}
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <AddTransition />
+        </Box>
+      </Modal>
+    </div>
         </div>
         </div>
 
