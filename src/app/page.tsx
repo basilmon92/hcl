@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import {Chart} from "@/components/Chart";
 import Image from "next/image";
 import Link from "next/link";
+import  {Table}  from "@/components/Table";
 
 export default function Home() {
 
@@ -122,6 +123,7 @@ export default function Home() {
           </div>
         
         {/* table compoonet */}
+          <Table />
         </div>
         </div>
 
