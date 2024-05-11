@@ -6,6 +6,7 @@ import { Chart } from "@/components/Chart";
 import Navbar from "@/components/Navbar/Navbar";
 import Image from "next/image";
 import Link from "next/link";
+import  {Table}  from "@/components/Table";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -60,7 +61,7 @@ export default function Home() {
           <div className="flex space-x-4">
             <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Shopping</a>
             <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Loan</a>
-            <a href="#" className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page" onClick={handleOpen}>Add Transition</a>
+            <a href="#" className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page" onClick={handleOpen}>Add Transaction</a>
           </div>
         </div>
       </div>
@@ -144,14 +145,15 @@ export default function Home() {
 
         {/* Graph compoonet */}
           <div className="dashboard_graph_holder w-full ">
-           <h1 className="font-semibold text-lg"> Dash Board Graph Place here </h1>
+           <Chart />
           </div>
         
         {/* table compoonet */}
   
         <div className="dashboard_graph_holder w-full ">
-           <h1 className="font-semibold text-lg"> Add Table Here </h1>
-          </div>
+           <h1 className="font-semibold text-lg">Monthly Spend View</h1>
+          <Table />
+        </div>
         {/* Add transition popup  */}
               
 
