@@ -1,19 +1,27 @@
 'use client'
 import { useState } from 'react'
-import Select from '@mui/material/Select';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 export default function DropDown(props: any) {
-    const [select, setSelect] = useState('credits');
-    const changeHandler = ()=> {
-        props.onInputHandler(select)
+    
+    const [select, setSelect] = useState('');
+    const handleChange = (event: SelectChangeEvent) => {
+        setSelect(event.target.value as string);
+      };
+
+    const changeHandler = (e: any)=> {
+        setSelect(e.target.value)
+        props.setFn(e.target.value);
     }
+    
     return (
-      <label>
-        Payment Type
-        <Select value={select} onChange={e => setSelect(e.target.value)} name="select" onInput={changeHandler}>
-          <option value="credits">Credits</option>
-          <option value="debits">Debits</option>
+      <>
+      {console.log("???",select)}
+        <Select value={select} onChange={(e: any)=>{handleChange(e)}} name="select">
+          {props.data.map((value: any) => {
+return <option value={value}>{value}</option>;
+})}
         </Select>
-      </label>
+      </>
     );
   }
