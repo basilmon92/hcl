@@ -7,7 +7,7 @@ const AddTransition = () => {
 
     const paymentSchema = {
         customerId: '',
-        paymentDescription: '',
+        transactionDescription: '',
         amount: '',
         paymentType: '',
         date: ''
@@ -27,13 +27,13 @@ const AddTransition = () => {
         }
         e.preventDefault();
         axios.post(
-            '/http://127.0.0.1:3003/api/add',
+            'http://127.0.0.1:3003/api/add',
             formData, {
             headers: headers
         }
         ).then((res) => {
             console.log(res, 'res');
-
+            setFormData(paymentSchema);
 
         }).catch((err) => {
             setErrMsg('Something went wrong!')
@@ -59,7 +59,7 @@ const AddTransition = () => {
                     </div>
                     <div className='formInput mb-3'>
                         <p className='text-sm'>Payment Description</p>
-                        <input type="text" className='w-full border-solid border-2 border-neutral-600 rounded-md p-1' placeholder='Description' name="paymentDescription" value={formData.paymentDescription} onChange={(e) => onHanldeChange(e)} />
+                        <input type="text" className='w-full border-solid border-2 border-neutral-600 rounded-md p-1' placeholder='Description' name="transactionDescription" value={formData.transactionDescription} onChange={(e) => onHanldeChange(e)} />
                     </div>
                     <div className='formInput mb-3'>
                         <p className='text-sm'>Amont</p>
