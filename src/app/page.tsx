@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar/Navbar";
 import Image from "next/image";
 import Link from "next/link";
-import Table from "@/components/Table/Table";
 
 export default function Home() {
   return (
