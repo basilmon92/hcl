@@ -31,3 +31,20 @@ body {
     text-wrap: balance;
   }
 }
+/* branding */
+
+.app-theme {
+  background-color: white;
+}
+.header-bg{
+  background-color:#111827;
+}
+.button-bg{
+  background-color: #6366F1;
+}
+.text-color-black {
+  color:#000000;
+}
+.text-color-white {
+  color:#fafafa;
+}

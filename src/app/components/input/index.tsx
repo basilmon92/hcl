@@ -4,9 +4,7 @@ import { TextField } from '@mui/material';
 export default function InputBox(props: any) {
 
 const [input, setInput] = useState('')
-// const changeHandler = ()=> {
-//     props.onInputHandler(input)
-// }
+
 return (
-    <TextField type="text" value={input} onChange={(e: any)=>setInput(e.target.value)}  />)
+    <TextField type="text" name='name' value={input} onChange={(e: any)=>setInput(e.target.value)} data-testid="custom-element" />)
 }

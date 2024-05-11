@@ -1,9 +1,9 @@
 import {screen, render, fireEvent} from '@testing-library/react'
-import InputBox from '@/app/components/Input'
+import InputBox from '@/app/components/Input/index'
 
 const setup = () => {
     const utils = render(<InputBox />)
-    const input = screen.getByLabelText('input')
+    const input = screen.getByTestId('custom-element')
     return {
       input,
       ...utils,
