@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
+
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
         <div className="w-full">
@@ -73,9 +75,7 @@ export default function Home() {
     </div>
   </div>
 </nav>
-<div>
-   {/* <Navbar /> */}
-</div>
+
       
         <div className="dashboard_body_container mx-10">
             {/* dashbord amount details */}
