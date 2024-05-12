@@ -19,7 +19,7 @@ export default function DropDown(props: any) {
       {console.log("???",select)}
         <Select value={select} onChange={(e: any)=>{handleChange(e)}} name="select">
           {props.data.map((value: any) => {
-return <option value={value}>{value}</option>;
+return <option key={value} value={value}>{value}</option>;
 })}
         </Select>
       </>
